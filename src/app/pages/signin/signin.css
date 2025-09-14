@@ -76,6 +76,11 @@ main {
     ;
 
   } */
+main {
+  display: grid;
+  place-items: center;  /* centraliza em ambos os eixos */
+  height: 100vh;
+}
 
 
 .signin-container {
@@ -85,7 +90,13 @@ main {
   border: 1px solid #ddd;
   border-radius: 8px;
 }
-
+/* Título e subtítulo */
+/* .signin-container h2 {
+  margin: 0 0 .25rem 0;
+  text-align: center;
+  font: var(--mat-sys-headline-small);
+  color: var(--mat-sys-on-surface);
+} */
 .signin-container h2 {
   text-align: center;
   margin-bottom: 1rem;
