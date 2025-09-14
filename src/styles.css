@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  .mat-mdc-form-field-required-marker {
+    color: red;
+  }
+
+  .confirm-button {
+    position: absolute;
+    right: 115px;
+    bottom: 10px;
+    background-color: #229a00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 10px 0 10px;
+  }
+
+  mat-form-field {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+
+  }
+
+  mat-card {
+    max-width: 99%;
+    /* margin: 2em auto; */
+    /* margin: 16px; */
+
+  }
+
+  mat-card-title {
+    font-weight: bold;
+    font-size: 18px; /* Ajuste conforme necessário */
+  }
+
+
+  .custom-mat-error {
+    /* mesma tipografia do Material */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 0.75rem;            /* 12px */
+    line-height: 1.33333em;        /* 16px */
+    /* mesmo espaçamento interno do mat-error */
+    margin: 3px 0 0 14px;
+    /* cor padrão de erro (warn) do tema Material */
+    color: #f44336;
+  }
+
+
+
+
