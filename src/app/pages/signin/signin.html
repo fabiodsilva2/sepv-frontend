@@ -1,13 +1,52 @@
+<main>
+  <section class="wrap-login-form">
 <div class="signin-container">
-  <h2>Entrar</h2>
+  <h2>Sistema Eletrônico de Proteção Veicular</h2>
 
   <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
-    <label>Email</label>
-    <input type="input" formControlName="login" />
+    <mat-form-field appearance="outline" >
+          <mat-label>Login</mat-label>
+          <input
+            name="login"
+            type="text"
+            matInput
+            formControlName="login"
+            placeholder="login"
+            maxlength="30"
+          />
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error>Login requerido</mat-error>
+        </mat-form-field>
 
-    <label>Senha</label>
-    <input type="password" formControlName="password" />
+    <!-- <label>Email</label>
+    <input type="input" formControlName="login" /> -->
 
-    <button type="submit" [disabled]="signinForm.invalid">Entrar</button>
+    <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input
+            name="password"
+            type="password"
+            matInput
+            formControlName="password"
+            placeholder="Senha"
+            maxlength="150"
+          />
+
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-error>Senha requerida</mat-error>
+        </mat-form-field>
+
+        <div class="container-button-submit">
+            @if (isloading) {
+              <mat-spinner [diameter]="50"></mat-spinner>
+            }@else{
+              <button class="submit-button" type="submit" [disabled]="signinForm.invalid">Entrar </button>
+            }
+
+        </div>
+
+    <!-- <button type="submit" [disabled]="signinForm.invalid">Entrar</button> -->
   </form>
 </div>
+</section>
+</main>
