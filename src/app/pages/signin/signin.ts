@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Auth } from '../../service/auth';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -34,7 +35,8 @@ export class Signin {
 
   constructor(
     private fb: FormBuilder,
-    private auth:Auth
+    private auth:Auth,
+    private router:Router
 
   ) {
 
@@ -62,9 +64,9 @@ export class Signin {
         console.log(data);
 
 
-        if (data.userDetails){
+        if (data){
           console.log('Foi data');
-          //this.router.navigate(['solicitacao-hora-extra']);
+          this.router.navigate(['home']);
         }
 
 
