@@ -5,6 +5,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Auth } from '../../service/auth';
+
 
 @Component({
   selector: 'app-signin',
@@ -15,7 +17,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+
 
     ],
 
@@ -29,7 +32,11 @@ export class Signin {
 
 
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private auth:Auth
+
+  ) {
 
     this.signinForm = this.fb.group({
       login: ['', [Validators.required, Validators.maxLength(20)]],
@@ -40,8 +47,40 @@ export class Signin {
 
   onSubmit() {
     if (this.signinForm.valid) {
+
       console.log('Form enviado:', this.signinForm.value);
+
     }
+
+    this.isloading = true;
+
+    const username = `${this.signinForm.value.login.toLowerCase()}`;
+
+    this.auth.signIn(username, this.signinForm.value.password).subscribe({
+
+      next: (data) => {
+        console.log(data);
+
+
+        if (data.userDetails){
+          console.log('Foi data');
+          //this.router.navigate(['solicitacao-hora-extra']);
+        }
+
+
+        this.isloading = false;
+
+      },
+      error: (err) => {
+
+        if (err.status == 401) {
+          console.log('Usuário ou senha incorretos. Tente novamente.');
+          //this.toastr.error('Usuário ou senha incorretos. Tente novamente.');
+        }
+        this.isloading = false;
+      },
+
+    });
   }
 
 }
