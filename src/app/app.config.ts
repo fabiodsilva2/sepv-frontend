@@ -4,11 +4,13 @@ import { provideHttpClient } from '@angular/common/http'; // 👈 IMPORTANTE!
 
 import { routes } from './app.routes';
 
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient() // 👈 ADICIONE ESTA LINHA
+    provideHttpClient(), // 👈 ADICIONE ESTA LINHA
+
   ]
 };
