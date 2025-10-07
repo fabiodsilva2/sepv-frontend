@@ -22,3 +22,59 @@ mat-icon {
 .spacer {
   flex: 1 1 auto;
 }
+
+
+.user-submenu {
+  height: 55px;
+  width: 55px;
+  position: absolute;
+  border: none;
+  background: none;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #69679c;
+  font-family: monospace;
+  font-weight: 500;
+  .mat-icon {
+    width: 48px;
+    height: 35px;
+    font-size: 1.6em;
+  }
+}
+
+/* .menu {
+  left: 50px;
+} */
+
+
+.menu-btn {
+  width: 60px;            /* largura maior */
+  height: 60px;           /* altura maior */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;     /* formato circular */
+}
+
+/* aumenta o ícone dentro */
+.menu-btn .mat-icon {
+  font-size: 32px;        /* tamanho do ícone */
+  width: 32px;
+  height: 32px;
+}
+
+/* estilo opcional ao passar o mouse */
+.menu-btn:hover {
+  background-color: rgba(105, 103, 156, 0.1);
+}
+
+
+
+
+
+
+
+
+

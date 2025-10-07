@@ -1,11 +1,23 @@
 <mat-toolbar >
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button class="menu-btn" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
   <span>SEPV</span>
   <span class="spacer"></span>
-  <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
+  <button class="menu-btn"  mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon title="Usuario" >account_circle</mat-icon>
+
   </button>
+
+  <mat-menu #menu="matMenu">
+           {{ nameUSer }}
+
+
+         <button mat-menu-item (click)="signOut()">
+           <mat-icon>logout</mat-icon>
+           <span>Sair</span>
+         </button>
+       </mat-menu>
+
   <!-- ações à direita, se quiser -->
 </mat-toolbar>
