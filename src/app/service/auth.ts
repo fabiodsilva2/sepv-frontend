@@ -110,5 +110,11 @@ export class Auth {
     this.router.navigate(['/signin']);
   }
 
+  public getNome = (): string | undefined => {
+    const userDetails = this.getUserDetail2();
+
+    return userDetails?.nome;
+  };
+
 
 }
