@@ -1,5 +1,7 @@
 <app-menu></app-menu>
-<app-menu-lateral>
-</app-menu-lateral>
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+  <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>
+
 
